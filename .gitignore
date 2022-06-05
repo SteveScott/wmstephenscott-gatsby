@@ -83,3 +83,7 @@ packages/gatsby-theme-algolia
 #bit
 .bitmap
 .bit/
+
+#git
+git-credential-manager/
+CA.pem

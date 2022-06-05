@@ -8,28 +8,34 @@ export const MenuItem = ({
   className = "",
   ...props
 }) => {
+ // console.log(menuItem, className)
   if (menuItem.children.length) {
     return <Submenu menuItem={menuItem} />
   } else {
     return (
       <div
-        className={`menu-item flex items-center font-semibold ${
+        /* className={`menu-item flex items-center font-semibold ${
           menuItem.cssClasses
         } ${
           orientation === "V"
             ? "text-sidebarColor dark:text-dark-sidebarColor"
             : "text-text dark:text-dark-text "
-        } ${className}`}
+        } ${className}`}*/
         key={menuItem.id}
+        className={`${className}`}
         {...props}
       >
+
         <MenuLink
-          menuItem={menuItem}
+          menuItem={menuItem}/*
           className={` ${
             orientation === "V"
               ? "text-sidebarColor dark:text-dark-sidebarColor"
               : "text-text dark:text-dark-text "
           }`}
+          */
+         
+        className={`${className}`}
         />
       </div>
     )
