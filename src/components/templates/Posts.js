@@ -3,6 +3,7 @@ import { Archive } from "~/components/archive"
 import { Layout } from "~/components/Layout"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
+import { GcdMenu } from "../menu/GcdMenu"
 
 const Posts = ({ posts, ctx }) => {
   const { humanPageNumber, numberOfPages, title, yoastSeo, seo } = ctx
@@ -10,6 +11,7 @@ const Posts = ({ posts, ctx }) => {
 
   return (
     <Layout page="blog">
+      <GcdMenu/>
       <Seo
         humanPageNumber={humanPageNumber}
         numberOfPages={numberOfPages}

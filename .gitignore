@@ -87,3 +87,5 @@ packages/gatsby-theme-algolia
 #git
 git-credential-manager/
 CA.pem
+install-from-source.sh
+yarn.lock

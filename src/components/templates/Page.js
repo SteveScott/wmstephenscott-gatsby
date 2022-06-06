@@ -5,7 +5,8 @@ import { ParsedContent, ActivatePageScripts } from "~/utils"
 import { Seo } from "@gatsbywpthemes/gatsby-plugin-wp-seo"
 import { useThemeOptions } from "@gatsbywpthemes/gatsby-theme-blog-data/src/hooks"
 import clsx from "clsx"
-import { MenuItem } from "../menu/MenuItem"
+
+import { GcdMenu } from "../menu/GcdMenu"
 
 const Page = ({ page, ctx }) => {
   const { title, isFrontPage, content, uri, headlesswp } = page
@@ -58,32 +59,17 @@ const Page = ({ page, ctx }) => {
           //   "p-5 sm:p-10 card": !pageTemplate.includes("full"),
           // })}
           >
-            <div className="homepage-links-container">
-              <div>
-                <MenuItem menuItem={{children: [], url: '/', label: 'Home', id: 4}} className={'homepage-links'}/>
-              </div>
-              <div>
-                <MenuItem menuItem={{children: [], url: '/geo', label: 'Geo', id: 1}} orientation={'V'} className={'homepage-links'}/>
-              </div>
-              <div>
-                <MenuItem menuItem={{children: [], url: '/code', label: 'Code', id: 2}}  className={'homepage-links'}/>
-              </div>
-              <div>
-                <MenuItem menuItem={{children: [], url: '/design', label: 'Design', id: 3}} className={'homepage-links'}/>
-              </div>
-              <div>
-                <MenuItem menuItem={{children: [], url: '/', label: 'Blog', id: 5}} className={'homepage-links'}/>
-              </div>
-              
-            </div>
+     
             {!skipTitle && !pageTemplate.includes("full") && (
               <h1
                 dangerouslySetInnerHTML={{ __html: title }}
                 className="text-center h1Archive"
               />
             )}
+            
             <div className={clsx("content")}>
               <ActivatePageScripts />
+              <GcdMenu/>
               <ParsedContent content={content} />
             </div>
           </div>
